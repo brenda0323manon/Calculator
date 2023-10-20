@@ -30,10 +30,10 @@ buttons.forEach ((button) => {
         if (button.textContent === 'C') {
             clearDisplay();
         }   else if (button.textContent === '=') {
-            calculate();
+            calculate(); 
         }   else {
             appendToDisplay(button.textContent);
-        }
+        }   
     });
 });
 
