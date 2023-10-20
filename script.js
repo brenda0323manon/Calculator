@@ -8,16 +8,15 @@ function clearDisplay() {
     display.value = '';
 }
 
-// // function percentageDisplay(num,per) {
-//        return (num/100)*performance;
-// //     const display = document.getElementById('display');
-// //     display.value = value;
-// }
-
 function calculate() {
     const display = document.getElementById('display');
     try {
+        if(display.value.includes('%')) {
+            const percentage = parseFloat(display.value) / 100;
+            display.value = percentage;
+    }   else {
         display.value = eval(display.value);
+    }
     }   catch (error) {
         display.value = 'Error';
     }
@@ -30,7 +29,7 @@ buttons.forEach ((button) => {
         if (button.textContent === 'C') {
             clearDisplay();
         }   else if (button.textContent === '=') {
-            calculate(); 
+            calculate();
         }   else {
             appendToDisplay(button.textContent);
         }   
